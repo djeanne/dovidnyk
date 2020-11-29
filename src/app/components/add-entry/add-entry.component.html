@@ -1,0 +1,42 @@
+<div class="columns">
+    <div class="colum col-3"></div>
+    <div class="column col-6">
+        <h3>Here you can add a new human (or monster, or robot - your call) to your phone book</h3>
+
+        <form [formGroup]="entryForm" (ngSubmit)="saveEntry()" class="form-group">
+
+            <label class="form-label">Name</label>
+            <input placeholder="e.g. Mike Wazowski" type="text" formControlName="name">
+            <span *ngIf="!entryForm.get('name').valid && (entryForm.get('name').touched || formSubmit)">
+                <div class="text-error">
+                    Please enter a valid name
+                </div>
+            </span>
+
+            <label class="form-label">Phone number</label>
+            <input placeholder="max 12 characters" type="tel" formControlName="phone">
+            <span *ngIf="!entryForm.get('phone').valid && (entryForm.get('phone').touched || formSubmit)">
+                <div class="text-error">
+                    Please enter a valid phone number
+                </div>
+            </span>
+            
+            <label class="form-label">E-mail</label>
+            <input placeholder="e.g. mikemazowski@monstersinc" type="email" formControlName="email">
+            <span *ngIf="!entryForm.get('email').valid && (entryForm.get('email').touched || formSubmit)">
+                <div class="text-error">
+                    Please enter a valid e-mail
+                </div>
+            </span>
+
+            <div>
+                <button mat-stroked-button class="bg-gray save-entry" type="submit">Save</button>
+                <button mat-stroked-button class="bg-dark cancel" type="cancel" routerLink="/">Cancel</button>
+            </div>
+            
+        </form>
+    </div>
+    <div class="colum col-3"></div>
+</div>
+
+

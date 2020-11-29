@@ -1,0 +1,30 @@
+<h1>Dovidnyk: a whitish pages phonebook</h1>
+
+<div *ngIf="!entries">
+    <div class="empty">
+        <p class="empty-title h5">You haven't added any entries to your phonebook yet</p>
+        <p class="empty-subtitle">Click the button below to add an entry</p>
+        <app-add-new></app-add-new>
+      </div>
+</div>
+
+<div *ngIf="entries">
+    <div class="columns">
+        <div class="colum col-1"></div>
+        <div class="column col-10">
+            <app-add-new></app-add-new>
+
+            <table *ngIf="entries" class="table table-striped table-hover">
+                <th *ngFor="let column of columns">
+                    {{ column }}
+                </th>
+                <tr *ngFor="let entry of entries" class="active">
+                    <td>{{entry['name']}}</td>
+                    <td>{{entry['phone']}}</td>
+                    <td>{{entry['email']}}</td>
+                </tr>
+            </table>
+    </div>
+    <div class="colum col-1"></div>
+</div>
+  
