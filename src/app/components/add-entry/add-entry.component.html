@@ -6,7 +6,7 @@
         <form [formGroup]="entryForm" (ngSubmit)="saveEntry()" class="form-group">
 
             <label class="form-label">Name</label>
-            <input placeholder="e.g. Mike Wazowski" type="text" formControlName="name">
+            <input id="name" placeholder="e.g. Mike Wazowski" type="text" formControlName="name">
             <span *ngIf="!entryForm.get('name').valid && (entryForm.get('name').touched || formSubmit)">
                 <div class="text-error">
                     Please enter a valid name
@@ -14,7 +14,7 @@
             </span>
 
             <label class="form-label">Phone number</label>
-            <input placeholder="max 12 characters" type="tel" formControlName="phone">
+            <input id="phone" placeholder="max 12 characters" type="tel" formControlName="phone">
             <span *ngIf="!entryForm.get('phone').valid && (entryForm.get('phone').touched || formSubmit)">
                 <div class="text-error">
                     Please enter a valid phone number
@@ -22,7 +22,7 @@
             </span>
             
             <label class="form-label">E-mail</label>
-            <input placeholder="e.g. mikemazowski@monstersinc" type="email" formControlName="email">
+            <input id="email" placeholder="e.g. mikewazowski@monstersinc" type="email" formControlName="email">
             <span *ngIf="!entryForm.get('email').valid && (entryForm.get('email').touched || formSubmit)">
                 <div class="text-error">
                     Please enter a valid e-mail
@@ -30,8 +30,8 @@
             </span>
 
             <div>
-                <button mat-stroked-button class="bg-gray save-entry" type="submit">Save</button>
-                <button mat-stroked-button class="bg-dark cancel" type="cancel" routerLink="/">Cancel</button>
+                <button id="submit" mat-stroked-button class="bg-gray save-entry" type="submit">Save</button>
+                <button id="cancel" mat-stroked-button class="bg-dark cancel" type="cancel" routerLink="/">Cancel</button>
             </div>
             
         </form>
